@@ -10,16 +10,11 @@ public class NewBehaviourScript : MonoBehaviour
     void Start()
     {
         randNum = Random.Range(0, 3);
-        if(randNum == 0) 
-        {
+        if(randNum == 0){
             Barricade.SetActive(true);
-            Debug.Log("Barricade");
         }
-
-        if (randNum == 1)
-        {
+        if (randNum == 1){
             BarricadeWRamp.SetActive(true);
-            Debug.Log("BarricadeWRamp");
         }
     }
 
