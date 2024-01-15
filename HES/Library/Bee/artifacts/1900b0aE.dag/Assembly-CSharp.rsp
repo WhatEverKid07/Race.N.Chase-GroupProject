@@ -360,6 +360,7 @@
 "Assets/Scripts/CameraController.cs"
 "Assets/Scripts/CarController.cs"
 "Assets/Scripts/Randomizer.cs"
+"Assets/Scripts/WheelController.cs"
 -langversion:9.0
 
 /deterministic
