@@ -32,7 +32,7 @@ public class CarController : MonoBehaviour
     void CheckInput()
     {
         gasInput = Input.GetAxis("Vertical");
-        steeringInput = Input.GetAxis("Horizontal");
+        steeringInput = Input.GetAxis("Horizontal") * 2f;
         slipAngle = Vector3.Angle(transform.forward, playerRB.velocity-transform.forward);
         if (slipAngle < 120f) {
             if (gasInput < 0)
