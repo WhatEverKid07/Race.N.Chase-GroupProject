@@ -6,7 +6,7 @@ public class Controller : MonoBehaviour
 {
     public WheelCollider[] wheels = new WheelCollider[4];
     public GameObject[] wheelMesh = new GameObject[4];
-    public float torque = 200;
+    public float torque = 5000f;
     public float steeringMax = 4;
     // Start is called before the first frame update
     void Start()
