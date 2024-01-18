@@ -57,10 +57,10 @@ public class CarController : MonoBehaviour
     void ApplyMotor()
     {
 
-        Colliders.RearRightWheel.motorTorque = motorPower * gasInput;
-        Colliders.RearLeftWheel.motorTorque = motorPower * gasInput;
-        Colliders.FrontRightWheel.motorTorque = motorPower * gasInput;
-        Colliders.FrontLeftWheel.motorTorque = motorPower * gasInput;
+        Colliders.RearRightWheel.motorTorque = motorPower * 10f;
+        Colliders.RearLeftWheel.motorTorque = motorPower * 10f;
+        Colliders.FrontRightWheel.motorTorque = motorPower * 10f;
+        Colliders.FrontLeftWheel.motorTorque = motorPower * 10f;
 
     }
     void ApplySteering()

@@ -4853,7 +4853,7 @@ WheelCollider:
     targetPosition: 1
   m_SuspensionDistance: 0.06
   m_ForceAppPointDistance: 0
-  m_Mass: 20
+  m_Mass: 100
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
     m_ExtremumSlip: 10
@@ -10047,7 +10047,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 581511090}
   serializedVersion: 4
-  m_Mass: 400
+  m_Mass: 350
   m_Drag: 1
   m_AngularDrag: 0.5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -10112,7 +10112,7 @@ MonoBehaviour:
   gasInput: 0
   brakeInput: 0
   steeringInput: 0
-  motorPower: 100000
+  motorPower: 50000
   brakePower: 1000
   steeringCurve:
     serializedVersion: 2
@@ -22679,7 +22679,7 @@ WheelCollider:
     targetPosition: 1
   m_SuspensionDistance: 0.06
   m_ForceAppPointDistance: 0
-  m_Mass: 20
+  m_Mass: 100
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
     m_ExtremumSlip: 3
@@ -23385,7 +23385,7 @@ Camera:
   field of view: 41.4
   orthographic: 1
   orthographic size: 54.11
-  m_Depth: 0
+  m_Depth: 2
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -30255,7 +30255,7 @@ WheelCollider:
     targetPosition: 1
   m_SuspensionDistance: 0.06
   m_ForceAppPointDistance: 0
-  m_Mass: 20
+  m_Mass: 100
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
     m_ExtremumSlip: 10
@@ -31989,7 +31989,7 @@ WheelCollider:
     targetPosition: 1
   m_SuspensionDistance: 0.06
   m_ForceAppPointDistance: 0
-  m_Mass: 20
+  m_Mass: 100
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
     m_ExtremumSlip: 3
