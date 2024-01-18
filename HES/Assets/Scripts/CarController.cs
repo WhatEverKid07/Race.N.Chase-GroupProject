@@ -27,12 +27,12 @@ public class CarController : MonoBehaviour
         ApplyWheelPositions();
         ApplyMotor();
         ApplySteering();
-        ApplyBrake();
+       // ApplyBrake();
     }
     void CheckInput()
     {
-        gasInput = Input.GetAxis("Vertical");
-        steeringInput = Input.GetAxis("Horizontal") * 3f;
+        gasInput = motorPower;
+        steeringInput = Input.GetAxis("Horizontal") * 2f;
         slipAngle = Vector3.Angle(transform.forward, playerRB.velocity-transform.forward);
         if (slipAngle < 120f) {
             if (gasInput < 0)
@@ -59,6 +59,8 @@ public class CarController : MonoBehaviour
 
         Colliders.RearRightWheel.motorTorque = motorPower * gasInput;
         Colliders.RearLeftWheel.motorTorque = motorPower * gasInput;
+        Colliders.FrontRightWheel.motorTorque = motorPower * gasInput;
+        Colliders.FrontLeftWheel.motorTorque = motorPower * gasInput;
 
     }
     void ApplySteering()
