@@ -364,6 +364,7 @@
 "Assets/Scripts/MinimapScript.cs"
 "Assets/Scripts/Randomizer.cs"
 "Assets/Scripts/Un-Used/CarController 2.cs"
+"Assets/Scripts/Un-Used/CarControllerReplace.cs"
 "Assets/Scripts/Un-Used/Controller.cs"
 "Assets/Scripts/Un-Used/DriftingCar.cs"
 "Assets/Scripts/Un-Used/WheelController.cs"

@@ -1,12 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CarController2 : MonoBehaviour
+public class CarController2: MonoBehaviour
 {
+    private Rigidbody playerRB;
     private float horizontalInput, verticalInput;
     private float currentSteerAngle, currentbreakForce;
     private bool isBreaking;
+    public float speed;
 
     // Settings
     [SerializeField] private float motorForce, breakForce, maxSteerAngle;
@@ -19,6 +22,14 @@ public class CarController2 : MonoBehaviour
     [SerializeField] private Transform frontLeftWheelTransform, frontRightWheelTransform;
     [SerializeField] private Transform rearLeftWheelTransform, rearRightWheelTransform;
 
+    private void Start()
+    {
+        playerRB = gameObject.GetComponent<Rigidbody>();
+    }
+    private void Update()
+    {
+        speed = playerRB.velocity.magnitude;
+    }
     private void FixedUpdate()
     {
         GetInput();

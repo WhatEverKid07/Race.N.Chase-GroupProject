@@ -15,14 +15,24 @@ public class WheelController : MonoBehaviour
     [SerializeField] Transform backRightTranform;
     [SerializeField] Transform backLeftTranform;
 
+    private Rigidbody playerRB;
     public float acceleration = 500f;
     public float breakingForce = 300f;
     public float maxTurnAngle = 15f;
+    public float speed;
 
     private float currentAcceleration = 0f;
     private float currentBreakForce = 0f;
     private float currentTurnAngle = 0f;
 
+    private void Start()
+    {
+        playerRB = gameObject.GetComponent<Rigidbody>();
+    }
+    private void Update()
+    {
+        speed = playerRB.velocity.magnitude;
+    }
     private void FixedUpdate()
     {
         currentAcceleration = acceleration * Input.GetAxis("Vertical");
