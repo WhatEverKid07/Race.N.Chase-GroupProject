@@ -22,6 +22,10 @@ public class CarController : MonoBehaviour
     }
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.LeftShift)) {
+            speed = playerRB.velocity.magnitude * 2;
+            Debug.Log("SPEED");
+        }
         speed = playerRB.velocity.magnitude;
         CheckInput();
         ApplyWheelPositions();
