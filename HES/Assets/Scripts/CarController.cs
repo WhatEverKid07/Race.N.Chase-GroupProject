@@ -4,37 +4,50 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
-    private Rigidbody playerRB;
+    public CarHealth carHealth;
+
     public WheelColliders Colliders;
     public WheelMeshes WheelMesh;
+    public AnimationCurve steeringCurve;
     public float gasInput;
     public float brakeInput;
     public float steeringInput;
-
     public float motorPower;
     public float brakePower;
+    public bool isBoosting = false;
+
+    private Rigidbody playerRB;
     private float slipAngle;
     public float speed;
-    public AnimationCurve steeringCurve;
+
     void Start()
     {
+        isBoosting = false;
         playerRB = gameObject.GetComponent<Rigidbody>();
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space)) {
-            motorPower = 500;
-            Debug.Log("SPEED");
+        if(Input.GetKey(KeyCode.LeftShift)) {
+            motorPower = 200f;
+            isBoosting = true;
         }
         else{
-            motorPower = 1000;
+            isBoosting = false;
+            motorPower = 100f;
         }
+        if(isBoosting == true){
+            motorPower = 200f;
+        }
+        if(carHealth.currentBoost < 1){
+            isBoosting = false;
+            motorPower = 100f;
+        }
+
         speed = playerRB.velocity.magnitude;
         CheckInput();
         ApplyWheelPositions();
         ApplyMotor();
         ApplySteering();
-       // ApplyBrake();
     }
     void CheckInput()
     {
@@ -52,14 +65,6 @@ public class CarController : MonoBehaviour
         {
             brakeInput = 0;
         }
-    }
-    void ApplyBrake()
-    {
-        Colliders.FrontRightWheel.brakeTorque = brakeInput * brakePower * 0.7f;
-        Colliders.FrontLeftWheel.brakeTorque = brakeInput * brakePower * 0.7f;
-
-        Colliders.RearRightWheel.brakeTorque = brakeInput * brakePower * 0.3f;
-        Colliders.RearLeftWheel.brakeTorque = brakeInput * brakePower * 0.3f;
     }
     void ApplyMotor()
     {
