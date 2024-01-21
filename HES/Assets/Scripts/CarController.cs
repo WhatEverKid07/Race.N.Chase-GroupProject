@@ -22,9 +22,12 @@ public class CarController : MonoBehaviour
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.LeftShift)) {
-            speed = playerRB.velocity.magnitude * 2;
+        if(Input.GetKeyDown(KeyCode.Space)) {
+            motorPower = 500;
             Debug.Log("SPEED");
+        }
+        else{
+            motorPower = 1000;
         }
         speed = playerRB.velocity.magnitude;
         CheckInput();
@@ -61,10 +64,10 @@ public class CarController : MonoBehaviour
     void ApplyMotor()
     {
 
-        Colliders.RearRightWheel.motorTorque = motorPower * 10f;
-        Colliders.RearLeftWheel.motorTorque = motorPower * 10f;
-        Colliders.FrontRightWheel.motorTorque = motorPower * 10f;
-        Colliders.FrontLeftWheel.motorTorque = motorPower * 10f;
+        Colliders.RearRightWheel.motorTorque = motorPower;
+        Colliders.RearLeftWheel.motorTorque = motorPower;
+        Colliders.FrontRightWheel.motorTorque = motorPower;
+        Colliders.FrontLeftWheel.motorTorque = motorPower;
 
     }
     void ApplySteering()
