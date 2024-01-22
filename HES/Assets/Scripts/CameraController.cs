@@ -8,13 +8,12 @@ public class CameraController : MonoBehaviour
     private Rigidbody playerRB;
     public Vector3 offSet;
     public float speed;
-    // Start is called before the first frame update
+
     void Start()
     {
         playerRB = player.GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         Vector3 playerForward = (playerRB.velocity + transform.forward).normalized;

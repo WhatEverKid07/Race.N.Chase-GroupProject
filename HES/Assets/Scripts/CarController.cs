@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,11 +16,12 @@ public class CarController : MonoBehaviour
     public float motorPower;
     public float brakePower;
     public bool isBoosting = false;
+    public float speed;
+    public float FieldOfView = 60;
 
     private Rigidbody playerRB;
     private float slipAngle;
-    public float speed;
-
+    
     void Start()
     {
         isBoosting = false;
@@ -31,16 +33,23 @@ public class CarController : MonoBehaviour
             motorPower = 200f;
             isBoosting = true;
         }
-        else{
+        else
+        {
             isBoosting = false;
             motorPower = 100f;
         }
         if(isBoosting == true){
             motorPower = 200f;
+            Camera.main.fieldOfView = FieldOfView + 10;
+        }
+        else
+        {
+            Camera.main.fieldOfView = FieldOfView;
         }
         if(carHealth.currentBoost < 1){
             isBoosting = false;
             motorPower = 100f;
+            Camera.main.fieldOfView = FieldOfView;
         }
 
         speed = playerRB.velocity.magnitude;

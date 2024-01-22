@@ -18,10 +18,35 @@ public class StayInside : MonoBehaviour
 
     void LateUpdate()
     {
+        
         transform.position = new Vector3(
             Mathf.Clamp(transform.position.x, MinimapCam.position.x - MinimapSize, MinimapSize + MinimapCam.position.x),
             transform.position.y,
-            Mathf.Clamp(transform.position.z, MinimapCam.position.z - MinimapSize, MinimapSize + MinimapCam.position.z)
-        );
+            Mathf.Clamp(transform.position.z, MinimapCam.position.z - MinimapSize, MinimapSize + MinimapCam.position.z));
+        
+        /*
+        // Center of Minimap
+        Vector3 centerPosition = MinimapCam.transform.localPosition;
+
+        // Just to keep a distance between Minimap camera and this Object (So that camera don't clip it out)
+        centerPosition.y += 0.5f;
+
+        // Distance from the gameObject to Minimap
+        float Distance = Vector3.Distance(transform.position, centerPosition);
+
+        // If the Distance is less than MinimapSize, it is within the Minimap view and we don't need to do anything
+        // But if the Distance is greater than the MinimapSize, then do this
+        if (Distance > MinimapSize)
+        {
+            // Gameobject - Minimap
+            Vector3 fromOriginToObject = transform.position - centerPosition;
+
+            // Multiply by MinimapSize and Divide by Distance
+            fromOriginToObject *= MinimapSize / Distance;
+
+            // Minimap + above calculation
+            transform.position = centerPosition + fromOriginToObject;
+        }
+        */
     }
 }
