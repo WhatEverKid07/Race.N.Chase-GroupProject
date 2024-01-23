@@ -12,7 +12,10 @@ public class CameraNoClip : MonoBehaviour
 
     public float DistanceUp = -2;                    //how high the camera is above the player
     public float smooth = 4.0f;                    //how smooth the camera moves into place
-    public float rotateAround = 70f;             //the angle at which you will rotate the camera (on an axis)                       
+    public float rotateAround = 70f;             //the angle at which you will rotate the camera (on an axis)
+
+    public float speed;
+    public Vector3 offSet;
 
     [Header("Player to follow")]
     public Transform target;                    //the target the camera follows
@@ -25,39 +28,48 @@ public class CameraNoClip : MonoBehaviour
     RaycastHit hit;
     float cameraHeight = 55f;
     float cameraPan = 0f;
-    float camRotateSpeed = 180f;
-    Vector3 camPosition;
-    Vector3 camMask;
-    Vector3 followMask;
+    public float camRotateSpeed = 180f;
+    public Vector3 camPosition;
+    public Vector3 camMask;
+    public Vector3 followMask;
 
     private float HorizontalAxis;
     private float VerticalAxis;
+    private Rigidbody playerRB;
 
     // Use this for initialization
     void Start()
     {
+        playerRB = target.GetComponent<Rigidbody>();
+
         //the statement below automatically positions the camera behind the target.
         rotateAround = target.eulerAngles.y - 45f;
 
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
     void LateUpdate()
     {
 
-        HorizontalAxis = Input.GetAxis("Mouse X");
-        VerticalAxis = Input.GetAxis("Mouse Y");
+        HorizontalAxis = Input.GetAxis("Horizontal");
+        VerticalAxis = Input.GetAxis("Vertical");
 
         //Offset of the targets transform (Since the pivot point is usually at the feet).
         Vector3 targetOffset = new Vector3(target.position.x, (target.position.y + 2f), target.position.z);
         Quaternion rotation = Quaternion.Euler(cameraHeight, rotateAround, cameraPan);
         Vector3 vectorMask = Vector3.one;
         Vector3 rotateVector = rotation * vectorMask;
+
         //this determines where both the camera and it's mask will be.
         //the camMask is for forcing the camera to push away from walls.
         camPosition = targetOffset + Vector3.up * DistanceUp - rotateVector * DistanceAway;
         camMask = targetOffset + Vector3.up * DistanceUp - rotateVector * DistanceAway;
- 
+
+        Vector3 playerForward = (playerRB.velocity + transform.forward).normalized;
+        transform.position = Vector3.Lerp(transform.position,
+            target.position + target.transform.TransformVector(offSet)
+            + playerForward * (-5f),
+            speed * Time.deltaTime);
 
         occludeRay(ref targetOffset);
         smoothCamMethod();
