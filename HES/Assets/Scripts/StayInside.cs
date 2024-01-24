@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class StayInside : MonoBehaviour
 {
-
     public Transform MinimapCam;
     public float MinimapSize;
     Vector3 TempV3;
-
     void Update()
     {
         TempV3 = transform.parent.transform.position;
@@ -18,18 +16,11 @@ public class StayInside : MonoBehaviour
 
     void LateUpdate()
     {
-        
-        transform.position = new Vector3(
-            Mathf.Clamp(transform.position.x, MinimapCam.position.x - MinimapSize, MinimapSize + MinimapCam.position.x),
-            transform.position.y,
-            Mathf.Clamp(transform.position.z, MinimapCam.position.z - MinimapSize, MinimapSize + MinimapCam.position.z));
-        
-        /*
         // Center of Minimap
         Vector3 centerPosition = MinimapCam.transform.localPosition;
 
         // Just to keep a distance between Minimap camera and this Object (So that camera don't clip it out)
-        centerPosition.y += 0.5f;
+        centerPosition.y -= 50f;
 
         // Distance from the gameObject to Minimap
         float Distance = Vector3.Distance(transform.position, centerPosition);
@@ -47,6 +38,5 @@ public class StayInside : MonoBehaviour
             // Minimap + above calculation
             transform.position = centerPosition + fromOriginToObject;
         }
-        */
     }
 }
