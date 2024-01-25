@@ -5,13 +5,13 @@ public class CameraNoClip : MonoBehaviour
 {
 
     [Header("Camera Properties")]
-    private float DistanceAway;                     //how far the camera is from the player.
+    public float DistanceAway;                     //how far the camera is from the player.
 
-    public float minDistance = 1;                //min camera distance
-    public float maxDistance = 2;                //max camera distance
+    public float minDistance;                //min camera distance
+    public float maxDistance;                //max camera distance
 
-    public float DistanceUp = -2;                    //how high the camera is above the player
-    public float smooth = 4.0f;                    //how smooth the camera moves into place
+    public float DistanceUp;                    //how high the camera is above the player
+    public float smooth;                    //how smooth the camera moves into place
     public float rotateAround = 70f;             //the angle at which you will rotate the camera (on an axis)
 
     public float speed;
@@ -48,11 +48,11 @@ public class CameraNoClip : MonoBehaviour
         //Cursor.lockState = CursorLockMode.Locked;
     }
 
-    void LateUpdate()
+    void FixedUpdate()
     {
 
-        HorizontalAxis = Input.GetAxis("Horizontal");
-        VerticalAxis = Input.GetAxis("Vertical");
+        HorizontalAxis = 0f; //Input.GetAxis("Horizontal");
+        VerticalAxis = 0f; //Input.GetAxis("Vertical");
 
         //Offset of the targets transform (Since the pivot point is usually at the feet).
         Vector3 targetOffset = new Vector3(target.position.x, (target.position.y + 2f), target.position.z);
@@ -76,6 +76,7 @@ public class CameraNoClip : MonoBehaviour
 
         transform.LookAt(target);
 
+        //Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, camPosition, Time.deltaTime * smooth);
        
         #region wrap the cam orbit rotation
         if (rotateAround > 360)
@@ -87,17 +88,18 @@ public class CameraNoClip : MonoBehaviour
             rotateAround = (rotateAround + 360f);
         }
         #endregion
-        
 
-        rotateAround += HorizontalAxis * camRotateSpeed * Time.deltaTime;
+
+        //rotateAround += 1 * camRotateSpeed * Time.deltaTime;
+
+        rotateAround = target.eulerAngles.y - 35f;
+
         DistanceUp = Mathf.Clamp(DistanceUp += VerticalAxis, -0.79f, 2.3f);
         DistanceAway = Mathf.Clamp(DistanceAway += VerticalAxis, minDistance, maxDistance);
 
     }
     void smoothCamMethod()
     {
-
-        smooth = 4f;
         transform.position = Vector3.Lerp(transform.position, camPosition, Time.deltaTime * smooth);
     }
     void occludeRay(ref Vector3 targetFollow)
@@ -112,6 +114,7 @@ public class CameraNoClip : MonoBehaviour
             smooth = 10f;
             //the x and z coordinates are pushed away from the wall by hit.normal.
             //the y coordinate stays the same.
+
             camPosition = new Vector3(wallHit.point.x + wallHit.normal.x * 0.5f, camPosition.y, wallHit.point.z + wallHit.normal.z * 0.5f);
         }
         #endregion

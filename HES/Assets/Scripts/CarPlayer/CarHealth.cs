@@ -40,7 +40,6 @@ public class CarHealth : MonoBehaviour
             LoseBoost(boostLose);
         }
         Death();
-        Pause();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -73,12 +72,5 @@ public class CarHealth : MonoBehaviour
             MainHUD.SetActive(false);
             DeathScreen.SetActive(true);
         }
-    }
-
-    void Pause()
-    {
-        if(Input.GetButtonDown())
-        Time.timeScale = 0;
-        PauseMenu.SetActive(true);
     }
 }

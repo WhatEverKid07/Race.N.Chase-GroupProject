@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Object
   - Car
+  - Safe House
   layers:
   - Default
   - TransparentFX
