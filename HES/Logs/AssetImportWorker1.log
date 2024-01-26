@@ -11,13 +11,19 @@ C:\Program Files\Unity\Hub\Editor\2022.3.4f1\Editor\Unity.exe
 -name
 AssetImportWorker1
 -projectPath
-C:/Users/ecallegari-l2023/Documents/GitHub/HES/HES
+C:/Users/sreynoso2023/Documents/GitHub/HES/HES
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
+<<<<<<< HEAD
 50582
 Successfully changed project path to: C:/Users/ecallegari-l2023/Documents/GitHub/HES/HES
 C:/Users/ecallegari-l2023/Documents/GitHub/HES/HES
+=======
+56521
+Successfully changed project path to: C:/Users/sreynoso2023/Documents/GitHub/HES/HES
+C:/Users/sreynoso2023/Documents/GitHub/HES/HES
+>>>>>>> 52fc01eaee5d1f55830f88ae5f90470273d1babd
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -49,15 +55,23 @@ C:/Users/ecallegari-l2023/Documents/GitHub/HES/HES
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
+<<<<<<< HEAD
 Player connection [7400] Host "[IP] 192.168.104.52 [Port] 0 [Flags] 2 [Guid] 3394189170 [EditorId] 3394189170 [Version] 1048832 [Id] WindowsEditor(7,ELAM-014-21) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
 Player connection [7400] Host "[IP] 192.168.104.52 [Port] 0 [Flags] 2 [Guid] 3394189170 [EditorId] 3394189170 [Version] 1048832 [Id] WindowsEditor(7,ELAM-014-21) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 Refreshing native plugins compatible for Editor in 6.43 ms, found 3 plugins.
+=======
+Player connection [15604] Host "[IP] 192.168.104.73 [Port] 0 [Flags] 2 [Guid] 1423491694 [EditorId] 1423491694 [Version] 1048832 [Id] WindowsEditor(7,ELAM-014-17) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [15604] Host "[IP] 192.168.104.73 [Port] 0 [Flags] 2 [Guid] 1423491694 [EditorId] 1423491694 [Version] 1048832 [Id] WindowsEditor(7,ELAM-014-17) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+Refreshing native plugins compatible for Editor in 5.32 ms, found 3 plugins.
+>>>>>>> 52fc01eaee5d1f55830f88ae5f90470273d1babd
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.4f1 (35713cd46cd7)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/ecallegari-l2023/Documents/GitHub/HES/HES/Assets
+[Subsystems] Discovering subsystems at path C:/Users/sreynoso2023/Documents/GitHub/HES/HES/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
@@ -69,12 +83,17 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/MonoBleedingEdge/etc'
+<<<<<<< HEAD
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56364
+=======
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56848
+>>>>>>> 52fc01eaee5d1f55830f88ae5f90470273d1babd
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+<<<<<<< HEAD
 Registered in 0.005968 seconds.
 - Loaded All Assemblies, in  0.243 seconds
 Native extension for WindowsStandalone target not found
@@ -85,6 +104,18 @@ Mono: successfully reloaded assembly
 - Finished resetting the current domain, in  0.430 seconds
 Domain Reload Profiling: 672ms
 	BeginReloadAssembly (60ms)
+=======
+Registered in 0.006379 seconds.
+- Loaded All Assemblies, in  0.273 seconds
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 665 ms
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.935 seconds
+Domain Reload Profiling: 1207ms
+	BeginReloadAssembly (71ms)
+>>>>>>> 52fc01eaee5d1f55830f88ae5f90470273d1babd
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
@@ -92,6 +123,7 @@ Domain Reload Profiling: 672ms
 		CreateAndSetChildDomain (1ms)
 	RebuildCommonClasses (26ms)
 	RebuildNativeTypeToScriptingClass (8ms)
+<<<<<<< HEAD
 	initialDomainReloadingComplete (43ms)
 	LoadAllAssembliesAndSetupDomain (106ms)
 		LoadAssemblies (59ms)
@@ -112,6 +144,28 @@ Domain Reload Profiling: 672ms
 			BeforeProcessingInitializeOnLoad (2ms)
 			ProcessInitializeOnLoadAttributes (74ms)
 			ProcessInitializeOnLoadMethodAttributes (34ms)
+=======
+	initialDomainReloadingComplete (46ms)
+	LoadAllAssembliesAndSetupDomain (120ms)
+		LoadAssemblies (70ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (116ms)
+			TypeCache.Refresh (115ms)
+				TypeCache.ScanAssembly (98ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (935ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (888ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (766ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (2ms)
+			ProcessInitializeOnLoadAttributes (78ms)
+			ProcessInitializeOnLoadMethodAttributes (39ms)
+>>>>>>> 52fc01eaee5d1f55830f88ae5f90470273d1babd
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -119,16 +173,24 @@ Domain Reload Profiling: 672ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
+<<<<<<< HEAD
 Symbol file data-00000246E1CC8EE0 doesn't match image C:\Users\ecallegari-l2023\Documents\GitHub\HES\HES\Library\ScriptAssemblies\Assembly-CSharp.dll
 Symbol file LoadedFromMemory is not a mono symbol file
 Symbol file LoadedFromMemory doesn't match image C:\Users\ecallegari-l2023\Documents\GitHub\HES\HES\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\ecallegari-l2023\Documents\GitHub\HES\HES\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 - Loaded All Assemblies, in  0.501 seconds
 Refreshing native plugins compatible for Editor in 1.89 ms, found 3 plugins.
+=======
+Symbol file LoadedFromMemory doesn't match image C:\Users\sreynoso2023\Documents\GitHub\HES\HES\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\sreynoso2023\Documents\GitHub\HES\HES\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.613 seconds
+Refreshing native plugins compatible for Editor in 2.06 ms, found 3 plugins.
+>>>>>>> 52fc01eaee5d1f55830f88ae5f90470273d1babd
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
+<<<<<<< HEAD
 - Finished resetting the current domain, in  0.384 seconds
 Domain Reload Profiling: 883ms
 	BeginReloadAssembly (91ms)
@@ -152,10 +214,36 @@ Domain Reload Profiling: 883ms
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
 		SetupLoadedEditorAssemblies (264ms)
+=======
+- Finished resetting the current domain, in  0.400 seconds
+Domain Reload Profiling: 1011ms
+	BeginReloadAssembly (110ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (22ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (36ms)
+	LoadAllAssembliesAndSetupDomain (430ms)
+		LoadAssemblies (228ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (247ms)
+			TypeCache.Refresh (233ms)
+				TypeCache.ScanAssembly (221ms)
+			ScanForSourceGeneratedMonoScriptInfo (11ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (400ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (275ms)
+>>>>>>> 52fc01eaee5d1f55830f88ae5f90470273d1babd
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (17ms)
 			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
+<<<<<<< HEAD
 			BeforeProcessingInitializeOnLoad (43ms)
 			ProcessInitializeOnLoadAttributes (182ms)
 			ProcessInitializeOnLoadMethodAttributes (14ms)
@@ -165,11 +253,26 @@ Domain Reload Profiling: 883ms
 		AwakeInstancesAfterBackupRestoration (4ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
 Refreshing native plugins compatible for Editor in 3.24 ms, found 3 plugins.
+=======
+			BeforeProcessingInitializeOnLoad (45ms)
+			ProcessInitializeOnLoadAttributes (190ms)
+			ProcessInitializeOnLoadMethodAttributes (15ms)
+			AfterProcessingInitializeOnLoad (5ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 3.02 ms, found 3 plugins.
+>>>>>>> 52fc01eaee5d1f55830f88ae5f90470273d1babd
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3261 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 44 unused Assets / (130.4 KB). Loaded Objects now: 3737.
 Memory consumption went from 131.0 MB to 130.9 MB.
+<<<<<<< HEAD
 Total: 2.430000 ms (FindLiveObjects: 0.193700 ms CreateObjectMapping: 0.072300 ms MarkObjects: 2.049500 ms  DeleteObjects: 0.113800 ms)
+=======
+Total: 4.197200 ms (FindLiveObjects: 0.515600 ms CreateObjectMapping: 0.133800 ms MarkObjects: 3.396800 ms  DeleteObjects: 0.150200 ms)
+>>>>>>> 52fc01eaee5d1f55830f88ae5f90470273d1babd
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -185,6 +288,7 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
+<<<<<<< HEAD
   Time since last request: 1565.799440 seconds.
   path: Assets/Models/police barricade (without ramp).fbx
   artifactKey: Guid(9d2d8e0c31e2e694c964fc5cfb1ce536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
@@ -2338,3 +2442,11 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+=======
+  Time since last request: 69931.705869 seconds.
+  path: Assets/Friction.physicMaterial
+  artifactKey: Guid(82c70ab98f221d54fa51377439818708) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Friction.physicMaterial using Guid(82c70ab98f221d54fa51377439818708) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a19b8a1059e4ebe05900cbc60ab7cc87') in 0.016868 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+>>>>>>> 52fc01eaee5d1f55830f88ae5f90470273d1babd
