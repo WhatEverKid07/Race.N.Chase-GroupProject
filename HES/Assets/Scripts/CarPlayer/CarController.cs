@@ -87,10 +87,10 @@ public class CarController : MonoBehaviour
     void ApplySteering()
     {
         float steeringAngle = steeringInput * steeringCurve.Evaluate(speed);
-        if(slipAngle < 120f)
+       /* if(slipAngle < 120f)
         {
             steeringAngle += Vector3.SignedAngle(transform.forward, playerRB.velocity + transform.forward, Vector3.up);
-        }
+        }*/
         steeringAngle = Mathf.Clamp(steeringAngle, -90f, 90f);
         Colliders.FrontRightWheel.steerAngle = steeringAngle;
         Colliders.FrontLeftWheel.steerAngle = steeringAngle;
