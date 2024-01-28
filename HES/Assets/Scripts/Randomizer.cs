@@ -5,22 +5,26 @@ using UnityEngine;
 public class Randomizer : MonoBehaviour
 {
     int randNum;
-    public GameObject Barricade, BarricadeWRamp, NoRamp;
+    public GameObject Barricade1, Barricade2, Barricade3, Barricade4;
 
     void Start()
     {
-        randNum = Random.Range(1, 4);
-        if(randNum == 2)
+        randNum = Random.Range(1, 5);
+        if(randNum == 1)
         {
-            Barricade.SetActive(true);
+            Barricade1.SetActive(true);
+        }
+        if (randNum == 2)
+        {
+            Barricade2.SetActive(true);
         }
         if (randNum == 3)
         {
-            BarricadeWRamp.SetActive(true);
+            Barricade3.SetActive(true);
         }
-        if (randNum == 1)
+        if (randNum == 4)
         {
-            NoRamp.SetActive(true);
+            Barricade4.SetActive(true);
         }
     }
 

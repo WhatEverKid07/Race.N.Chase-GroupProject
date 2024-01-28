@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1687899645979443634
 Transform:
   m_ObjectHideFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 239627759921796112}
+  - {fileID: 4754506692397915193}
   - {fileID: 4621314162295857302}
   m_Father: {fileID: 0}
   m_RootOrder: -1
@@ -134,7 +134,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77b850a1a97c23441ac858143396630c, type: 3}
---- !u!4 &239627759921796112 stripped
+--- !u!4 &4754506692397915193 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 77b850a1a97c23441ac858143396630c, type: 3}
   m_PrefabInstance: {fileID: 5076084374032956370}

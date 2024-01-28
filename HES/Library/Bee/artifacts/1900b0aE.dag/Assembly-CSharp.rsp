@@ -355,7 +355,7 @@
 -analyzer:"M:/Unity/2022.3.4f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"M:/Unity/2022.3.4f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/CameraController.cs"
-"Assets/Scripts/CammeraNoClip.cs"
+"Assets/Scripts/CameraNoClip.cs"
 "Assets/Scripts/CarPlayer/BoostBar.cs"
 "Assets/Scripts/CarPlayer/CarController.cs"
 "Assets/Scripts/CarPlayer/CarHealth.cs"
