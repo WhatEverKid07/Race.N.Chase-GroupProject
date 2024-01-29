@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 public class SafeHouseEnd : MonoBehaviour
 {
     public string safeHouseTag;
-    public string endScene;
+    //public string endScene;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag(safeHouseTag))
         {
-            SceneManager.LoadScene(endScene);
+            SceneManager.LoadScene("End Menu");
         }
     }
 }
