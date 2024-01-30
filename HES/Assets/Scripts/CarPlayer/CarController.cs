@@ -31,37 +31,8 @@ public class CarController : MonoBehaviour
     {
         speed = playerRB.velocity.magnitude;
 
-        if (Input.GetKey(KeyCode.LeftShift)) {
-            motorPower = 225f;
-            isBoosting = true;
-        }
-        else
-        {
-            isBoosting = false;
-            motorPower = 125f;
-        }
-        if(isBoosting == true){
-            motorPower = 225f;
-            Camera.main.fieldOfView = FieldOfView + 10;
-        }
-        else
-        {
-            Camera.main.fieldOfView = FieldOfView;
-        }
-        if(carHealth.currentBoost < 1){
-            isBoosting = false;
-            motorPower = 125f;
-            Camera.main.fieldOfView = FieldOfView;
-        }
-        if(Input.GetKey(KeyCode.Space))
-        {
-            motorPower = -MathF.Abs(motorPower);
-        }
-        else
-        {
-            motorPower = 125;
-        }
 
+        BoostSystem();
         CheckInput();
         ApplyWheelPositions();
         ApplyMotor();
@@ -97,14 +68,14 @@ public class CarController : MonoBehaviour
     void ApplySteering()
     {
         float steeringAngle = steeringInput * steeringCurve.Evaluate(speed);
-        if(slipAngle < 20f)
+       /* if(slipAngle < 120f)
         {
             steeringAngle = Mathf.Clamp(steeringAngle, -60f, 60f);
         }
         else
         {
             steeringAngle = Mathf.Clamp(steeringAngle, -90f, 90f);
-        }
+        }*/
         steeringAngle = Mathf.Clamp(steeringAngle, -90f, 90f);
         Colliders.FrontRightWheel.steerAngle = steeringAngle;
         Colliders.FrontLeftWheel.steerAngle = steeringAngle;
@@ -123,6 +94,38 @@ public class CarController : MonoBehaviour
         coll.GetWorldPose(out position, out quat);
         wheelMesh.transform.position = position;
         wheelMesh.transform.rotation = quat;
+    }
+    void BoostSystem()
+    {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            motorPower = 225f;
+            isBoosting = true;
+        }
+        else
+        {
+            isBoosting = false;
+            motorPower = 125f;
+        }
+        if (isBoosting == true)
+        {
+            motorPower = 225f;
+            Camera.main.fieldOfView = FieldOfView + 10;
+        }
+        else
+        {
+            Camera.main.fieldOfView = FieldOfView;
+        }
+        if (carHealth.currentBoost < 1)
+        {
+            isBoosting = false;
+            motorPower = 125f;
+            Camera.main.fieldOfView = FieldOfView;
+        }
+        if (Input.GetKey(KeyCode.Space))
+        {
+            motorPower = motorPower - motorPower * 2;
+        }
     }
 }
 [System.Serializable]
