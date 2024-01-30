@@ -29,17 +29,19 @@ public class CarController : MonoBehaviour
     }
     void Update()
     {
-        if(Input.GetKey(KeyCode.LeftShift)) {
-            motorPower = 200f;
+        speed = playerRB.velocity.magnitude;
+
+        if (Input.GetKey(KeyCode.LeftShift)) {
+            motorPower = 225f;
             isBoosting = true;
         }
         else
         {
             isBoosting = false;
-            motorPower = 100f;
+            motorPower = 125f;
         }
         if(isBoosting == true){
-            motorPower = 200f;
+            motorPower = 225f;
             Camera.main.fieldOfView = FieldOfView + 10;
         }
         else
@@ -48,11 +50,18 @@ public class CarController : MonoBehaviour
         }
         if(carHealth.currentBoost < 1){
             isBoosting = false;
-            motorPower = 100f;
+            motorPower = 125f;
             Camera.main.fieldOfView = FieldOfView;
         }
+        if(Input.GetKey(KeyCode.Space))
+        {
+            motorPower = -MathF.Abs(motorPower);
+        }
+        else
+        {
+            motorPower = 125;
+        }
 
-        speed = playerRB.velocity.magnitude;
         CheckInput();
         ApplyWheelPositions();
         ApplyMotor();
@@ -63,7 +72,8 @@ public class CarController : MonoBehaviour
         gasInput = motorPower;
         steeringInput = Input.GetAxis("Horizontal") * 2f;
         slipAngle = Vector3.Angle(transform.forward, playerRB.velocity-transform.forward);
-        if (slipAngle < 120f) {
+        if (slipAngle < 120f)
+        {
             if (gasInput < 0)
             {
                 brakeInput = Mathf.Abs(gasInput);
@@ -87,10 +97,14 @@ public class CarController : MonoBehaviour
     void ApplySteering()
     {
         float steeringAngle = steeringInput * steeringCurve.Evaluate(speed);
-       /* if(slipAngle < 120f)
+        if(slipAngle < 20f)
         {
-            steeringAngle = 
-        }*/
+            steeringAngle = Mathf.Clamp(steeringAngle, -60f, 60f);
+        }
+        else
+        {
+            steeringAngle = Mathf.Clamp(steeringAngle, -90f, 90f);
+        }
         steeringAngle = Mathf.Clamp(steeringAngle, -90f, 90f);
         Colliders.FrontRightWheel.steerAngle = steeringAngle;
         Colliders.FrontLeftWheel.steerAngle = steeringAngle;
