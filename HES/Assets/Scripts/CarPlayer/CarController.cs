@@ -26,6 +26,7 @@ public class CarController : MonoBehaviour
     {
         isBoosting = false;
         playerRB = gameObject.GetComponent<Rigidbody>();
+        Cursor.lockState = CursorLockMode.Locked;
     }
     void Update()
     {
