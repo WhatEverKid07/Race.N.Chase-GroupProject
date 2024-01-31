@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638404005662598924
-    m_Hash: 936427627
+      ticks: 638404742827031830
+    m_Hash: 2846965713
   m_LockFileStatus:
     m_FilePath: C:/Users/ecallegari-l2023/Documents/GitHub/HES/HES/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638404005662642396
-    m_Hash: 870807700
+      ticks: 638404742827031830
+    m_Hash: 1152930652
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
