@@ -71,6 +71,7 @@ public class CarHealth : MonoBehaviour
             Time.timeScale = 0;
             MainHUD.SetActive(false);
             DeathScreen.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }
