@@ -26,7 +26,7 @@ public class StayInside : MonoBehaviour
         Vector3 centerPosition = MinimapCam.transform.localPosition;
 
         // Just to keep a distance between Minimap camera and this Object (So that camera don't clip it out)
-        centerPosition.y += 30f;
+        centerPosition.y -= 30f;
 
         // Distance from the gameObject to Minimap
         float Distance = Vector3.Distance(transform.position, centerPosition);
