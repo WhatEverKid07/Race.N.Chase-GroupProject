@@ -12,6 +12,7 @@ public class SafeHouseEnd : MonoBehaviour
         if (collision.gameObject.CompareTag(safeHouseTag))
         {
             SceneManager.LoadScene("End Menu");
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }

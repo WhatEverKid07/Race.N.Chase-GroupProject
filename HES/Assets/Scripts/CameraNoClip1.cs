@@ -33,7 +33,7 @@ public class CameraNoClip : MonoBehaviour
     public Vector3 camMask;
     public Vector3 followMask;
 
-    private float HorizontalAxis;
+    //private float HorizontalAxis;
     private float VerticalAxis;
     private Rigidbody playerRB;
 
@@ -51,7 +51,7 @@ public class CameraNoClip : MonoBehaviour
     void FixedUpdate()
     {
 
-        HorizontalAxis = 0f; Input.GetAxis("Horizontal");
+        //HorizontalAxis = 0f; Input.GetAxis("Horizontal");
         VerticalAxis = 0f; //Input.GetAxis("Vertical");
 
         //Offset of the targets transform (Since the pivot point is usually at the feet).

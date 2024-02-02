@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 
 public class CarHealth : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class CarHealth : MonoBehaviour
     public GameObject MainHUD;
     public GameObject DeathScreen;
     public GameObject PauseMenu;
+
+    public GameObject smashedCar;
 
     [Header("Car Health")]
     public int maxHealth;
@@ -68,9 +71,14 @@ public class CarHealth : MonoBehaviour
     {
         if (currentHealth < 1)
         {
-            Time.timeScale = 0;
+            smashedCar.transform.position = gameObject.transform.position;
+            smashedCar.transform.rotation = gameObject.transform.rotation;
+            gameObject.GetComponent<CarController>().enabled = false;
             MainHUD.SetActive(false);
             DeathScreen.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            smashedCar.SetActive(true);
+            gameObject.SetActive(false);
         }
     }
 }

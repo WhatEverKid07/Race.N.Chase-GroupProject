@@ -26,33 +26,13 @@ public class CarController : MonoBehaviour
     {
         isBoosting = false;
         playerRB = gameObject.GetComponent<Rigidbody>();
+        Cursor.lockState = CursorLockMode.Locked;
     }
     void Update()
     {
-        if(Input.GetKey(KeyCode.LeftShift)) {
-            motorPower = 200f;
-            isBoosting = true;
-        }
-        else
-        {
-            isBoosting = false;
-            motorPower = 100f;
-        }
-        if(isBoosting == true){
-            motorPower = 200f;
-            Camera.main.fieldOfView = FieldOfView + 10;
-        }
-        else
-        {
-            Camera.main.fieldOfView = FieldOfView;
-        }
-        if(carHealth.currentBoost < 1){
-            isBoosting = false;
-            motorPower = 100f;
-            Camera.main.fieldOfView = FieldOfView;
-        }
-
         speed = playerRB.velocity.magnitude;
+
+        BoostSystem();
         CheckInput();
         ApplyWheelPositions();
         ApplyMotor();
@@ -109,6 +89,38 @@ public class CarController : MonoBehaviour
         coll.GetWorldPose(out position, out quat);
         wheelMesh.transform.position = position;
         wheelMesh.transform.rotation = quat;
+    }
+    void BoostSystem()
+    {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            motorPower = 225f;
+            isBoosting = true;
+        }
+        else
+        {
+            isBoosting = false;
+            motorPower = 125f;
+        }
+        if (isBoosting == true)
+        {
+            motorPower = 225f;
+            Camera.main.fieldOfView = FieldOfView + 10;
+        }
+        else
+        {
+            Camera.main.fieldOfView = FieldOfView;
+        }
+        if (carHealth.currentBoost < 1)
+        {
+            isBoosting = false;
+            motorPower = 125f;
+            Camera.main.fieldOfView = FieldOfView;
+        }
+        if(Input.GetKey(KeyCode.Space))
+        {
+            motorPower = motorPower - motorPower * 2;
+        }
     }
 }
 [System.Serializable]
