@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4494871, g: 0.49956018, b: 0.575688, a: 1}
+  m_IndirectSpecularColor: {r: 0.44948667, g: 0.49955952, b: 0.57568705, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2313,7 +2313,7 @@ Transform:
   - {fileID: 2120711171}
   - {fileID: 1663394709}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &56941249
 MonoBehaviour:
@@ -15402,9 +15402,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 963194228}
-  - {fileID: 1397332126}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &509600313 stripped
 GameObject:
@@ -29610,7 +29609,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1091773532 stripped
 GameObject:
@@ -30223,7 +30222,7 @@ Transform:
   - {fileID: 894751339}
   - {fileID: 1423399973}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1121763106 stripped
 GameObject:
@@ -33372,7 +33371,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1253342083 stripped
 GameObject:
@@ -36765,7 +36764,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1367675496 stripped
 GameObject:
@@ -38097,13 +38096,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1397332124}
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 0.40585327, y: 69.44676, z: 1.7403259}
+  m_LocalPosition: {x: -29.019999, y: 81.5, z: 71.79001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1080528833}
-  m_Father: {fileID: 509110246}
-  m_RootOrder: -1
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
 --- !u!114 &1397332127
 MonoBehaviour:
@@ -42139,7 +42138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a1679b10b080fd04ab53e575ada71c25, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 931273389679360882, guid: a1679b10b080fd04ab53e575ada71c25, type: 3}
       propertyPath: m_Layer
@@ -54542,7 +54541,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2f9f1ac01233904ab875407cf1759d9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.003
+      value: 11.859
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b2f9f1ac01233904ab875407cf1759d9, type: 3}
       propertyPath: m_LocalPosition.z
