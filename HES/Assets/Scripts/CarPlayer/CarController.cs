@@ -6,7 +6,6 @@ using UnityEngine;
 public class CarController : MonoBehaviour
 {
     public CarHealth carHealth;
-    public GameObject boostParticles;
 
     public WheelColliders Colliders;
     public WheelMeshes WheelMesh;
@@ -107,12 +106,10 @@ public class CarController : MonoBehaviour
         {
             motorPower = 225f;
             Camera.main.fieldOfView = FieldOfView + 10;
-            boostParticles.SetActive(true);
         }
         else
         {
             Camera.main.fieldOfView = FieldOfView;
-            boostParticles.SetActive(false);
         }
         if (carHealth.currentBoost < 1)
         {

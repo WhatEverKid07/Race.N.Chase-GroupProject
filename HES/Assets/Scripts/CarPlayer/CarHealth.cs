@@ -14,6 +14,8 @@ public class CarHealth : MonoBehaviour
     public GameObject PauseMenu;
 
     public GameObject smashedCar;
+    public GameObject boostParticles;
+
 
     [Header("Car Health")]
     public int maxHealth;
@@ -33,7 +35,7 @@ public class CarHealth : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         boostBar.SetMaxBoost(maxBoost);
-
+        boostParticles.SetActive(false);
     }
 
     void Update()
@@ -41,6 +43,10 @@ public class CarHealth : MonoBehaviour
         if(controller.isBoosting == true)
         {
             LoseBoost(boostLose);
+        }
+        else
+        {
+            boostParticles.SetActive(false);
         }
         Death();
     }
@@ -63,7 +69,7 @@ public class CarHealth : MonoBehaviour
     void LoseBoost(int damaged)
     {
         currentBoost -= damaged;
-
+        boostParticles.SetActive(true);
         boostBar.SetBoost(currentBoost);
     }
 
