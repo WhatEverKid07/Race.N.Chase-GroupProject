@@ -124,10 +124,15 @@ public class CameraNoClip : MonoBehaviour
     }
     void RearViewCam()
     {
-        if (Input.GetKey(KeyCode.C))
+        if (Input.GetKey(KeyCode.RightShift))
         {
             DistanceAway = -2f;
             DistanceUp = 0f;
+        }
+        else
+        {
+            DistanceAway = 2.5f;
+            DistanceUp = -1f;
         }
     }
 }
