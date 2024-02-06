@@ -73,6 +73,7 @@ public class CameraNoClip : MonoBehaviour
 
         occludeRay(ref targetOffset);
         smoothCamMethod();
+        RearViewCam();
 
         transform.LookAt(target);
 
@@ -95,7 +96,9 @@ public class CameraNoClip : MonoBehaviour
         rotateAround = target.eulerAngles.y - 35f;
 
         DistanceUp = Mathf.Clamp(DistanceUp += VerticalAxis, -0.79f, 2.3f);
-        DistanceAway = Mathf.Clamp(DistanceAway += VerticalAxis, minDistance, maxDistance);
+
+        //Old code making it not possible for a rear view cam
+        //DistanceAway = Mathf.Clamp(DistanceAway += VerticalAxis, minDistance, maxDistance);
 
     }
     void smoothCamMethod()
@@ -118,5 +121,13 @@ public class CameraNoClip : MonoBehaviour
             camPosition = new Vector3(wallHit.point.x + wallHit.normal.x * 0.5f, camPosition.y, wallHit.point.z + wallHit.normal.z * 0.5f);
         }
         #endregion
+    }
+    void RearViewCam()
+    {
+        if (Input.GetKey(KeyCode.C))
+        {
+            DistanceAway = -2f;
+            DistanceUp = 0f;
+        }
     }
 }
