@@ -56,7 +56,7 @@ public class CarAI : MonoBehaviour
     void Start()
     {
         GetComponent<Rigidbody>().centerOfMass = Vector3.zero;
-        //CalculateNavMashLayerBite();
+        CalculateNavMashLayerBite();
     }
 
     void FixedUpdate()
@@ -65,7 +65,7 @@ public class CarAI : MonoBehaviour
         ApplySteering();
         PathProgress();
     }
-    /*
+    
     private void CalculateNavMashLayerBite()
     {
         if (NavMeshLayers == null || NavMeshLayers[0] == "AllAreas")
@@ -80,7 +80,7 @@ public class CarAI : MonoBehaviour
                 NavMeshLayerBite += I;
             }
         }
-    }*/
+    }
 
     private void PathProgress() //Checks if the agent has reached the currentWayPoint or not. If yes, it will assign the next waypoint as the currentWayPoint depending on the input
     {
@@ -359,6 +359,7 @@ public class CarAI : MonoBehaviour
             float totalFOV = AIFOV * 2;
             float rayRange = 10.0f;
             float halfFOV = totalFOV / 2.0f;
+            //float halfFOV = totalFOV / 2.0f;
             Quaternion leftRayRotation = Quaternion.AngleAxis(-halfFOV, Vector3.up);
             Quaternion rightRayRotation = Quaternion.AngleAxis(halfFOV, Vector3.up);
             Vector3 leftRayDirection = leftRayRotation * transform.forward;
