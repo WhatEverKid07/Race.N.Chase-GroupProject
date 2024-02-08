@@ -4,8 +4,8 @@ using UnityEngine.AI;
 public class PoliceCarAI : MonoBehaviour
 {
     public Transform[] waypoints;
-    public float moveSpeed = 5f;
-    public float turnSpeed = 5f;
+    public float moveSpeed;
+    public float turnSpeed;
 
     private NavMeshAgent agent;
     private int currentWaypointIndex = 0;
@@ -22,7 +22,7 @@ public class PoliceCarAI : MonoBehaviour
         {
             Debug.LogWarning("NavMeshAgent is not on a valid NavMesh.");
             enabled = false; // Disable the script if agent is not on NavMesh
-            return;
+            //return;
         }
 
         // Set initial destination
@@ -31,8 +31,8 @@ public class PoliceCarAI : MonoBehaviour
 
     void Update()
     {
-        if (waypoints.Length == 0 || !agent.isOnNavMesh)
-            return;
+       // if (waypoints.Length == 0 || !agent.isOnNavMesh)
+          //  return;
 
         if (!agent.pathPending && agent.remainingDistance < 0.5f)
         {

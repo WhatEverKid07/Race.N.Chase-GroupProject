@@ -21,7 +21,7 @@ public class CarHealth : MonoBehaviour
     public int maxHealth;
     public int currentHealth;
     public int healthLose;
-    public string TagToDealDamage;
+    public List<string>;//("TagToDealDamage") HAHAHAHAHAH
 
     [Header("Car Boost")]
     public int maxBoost;
