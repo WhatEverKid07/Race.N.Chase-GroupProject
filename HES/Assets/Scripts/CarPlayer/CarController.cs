@@ -21,12 +21,16 @@ public class CarController : MonoBehaviour
 
     private Rigidbody playerRB;
     private float slipAngle;
+
+    public GameObject aiFollowMark;
     
     void Start()
     {
+        aiFollowMark.transform.position = gameObject.transform.position;
         isBoosting = false;
         playerRB = gameObject.GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
+        InvokeRepeating("AIFollowPoint", 0, 0.8f);
     }
     void Update()
     {
@@ -36,7 +40,12 @@ public class CarController : MonoBehaviour
         CheckInput();
         ApplyWheelPositions();
         ApplyMotor();
-        ApplySteering();
+        ApplySteering();    
+    }
+    private void AIFollowPoint()
+    {
+        aiFollowMark.transform.position = gameObject.transform.position;
+        //Destroy(aiFollowMark, 2f);
     }
     void CheckInput()
     {
