@@ -8,6 +8,7 @@ public class CarHealth : MonoBehaviour
     public HealthBar healthBar;
     public BoostBar boostBar;
     public CarController controller;
+    public PoliceCarAI policeAI;
 
     public GameObject MainHUD;
     public GameObject DeathScreen;
@@ -21,7 +22,10 @@ public class CarHealth : MonoBehaviour
     public int maxHealth;
     public int currentHealth;
     public int healthLose;
-    public List<string>;//("TagToDealDamage") HAHAHAHAHAH
+    public string TagToDealDamage;
+
+    public string PoliceAITag;
+    public int PoliceHealthLose;
 
     [Header("Car Boost")]
     public int maxBoost;
@@ -56,6 +60,10 @@ public class CarHealth : MonoBehaviour
         if (collision.gameObject.CompareTag(TagToDealDamage))
         {
             TakeDamage(healthLose);
+        }
+        if (collision.gameObject.CompareTag(PoliceAITag))
+        {
+            TakeDamage(PoliceHealthLose);
         }
     }
 

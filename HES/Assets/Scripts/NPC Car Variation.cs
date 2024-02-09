@@ -9,7 +9,7 @@ public class NPCCarVariation : MonoBehaviour
 
     void Start()
     {
-        randNum = Random.Range(0, 6);
+        randNum = Random.Range(0, 12);
         if(randNum == 0)
         {
             Car1.SetActive(true);
