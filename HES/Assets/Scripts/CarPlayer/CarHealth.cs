@@ -5,15 +5,16 @@ using UnityEngine.Assertions.Must;
 
 public class CarHealth : MonoBehaviour
 {
+    [Header("Scripts")]
     public HealthBar healthBar;
     public BoostBar boostBar;
     public CarController controller;
     public PoliceCarAI policeAI;
 
+    [Header("GameObjects")]
     public GameObject MainHUD;
     public GameObject DeathScreen;
     public GameObject PauseMenu;
-
     public GameObject smashedCar;
     public GameObject boostParticles;
 
@@ -23,6 +24,7 @@ public class CarHealth : MonoBehaviour
     public int currentHealth;
     public int healthLose;
     public string TagToDealDamage;
+    public AudioSource CarCrash;
 
     public string PoliceAITag;
     public int PoliceHealthLose;
@@ -31,6 +33,7 @@ public class CarHealth : MonoBehaviour
     public int maxBoost;
     public int currentBoost;
     public int boostLose;
+    public AudioSource BoostSFX;
 
     void Start()
     {
@@ -47,10 +50,14 @@ public class CarHealth : MonoBehaviour
         if(controller.isBoosting == true)
         {
             LoseBoost(boostLose);
+            BoostSFX.Play();
+            Debug.Log("BOOST");
         }
         else
         {
             boostParticles.SetActive(false);
+            BoostSFX.Stop();
+            Debug.Log("NO BOOST");
         }
         Death();
     }
@@ -60,10 +67,12 @@ public class CarHealth : MonoBehaviour
         if (collision.gameObject.CompareTag(TagToDealDamage))
         {
             TakeDamage(healthLose);
+            CarCrash.Play();
         }
         if (collision.gameObject.CompareTag(PoliceAITag))
         {
             TakeDamage(PoliceHealthLose);
+            CarCrash.Play();
         }
     }
 

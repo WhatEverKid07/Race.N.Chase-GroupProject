@@ -19,33 +19,77 @@ public class CarController : MonoBehaviour
     public float speed;
     public float FieldOfView = 60;
 
+    public float minSpeed;
+    public float maxSpeed;
+    public float minPitch;
+    public float maxPitch;
+    //private float pitchFromCar;
+
     private Rigidbody playerRB;
     private float slipAngle;
+    private bool HornIsOn = false;
 
-    public GameObject aiFollowMark;
+    public AudioSource carHorn;
+    public AudioSource carEngine;
     
     void Start()
     {
-        aiFollowMark.transform.position = gameObject.transform.position;
+        HornIsOn = false;
         isBoosting = false;
         playerRB = gameObject.GetComponent<Rigidbody>();
+        //carEngine = GetComponent<AudioSource>();
         Cursor.lockState = CursorLockMode.Locked;
-        InvokeRepeating("AIFollowPoint", 0, 0.8f);
     }
     void Update()
     {
         speed = playerRB.velocity.magnitude;
 
+        CarHorn();
         BoostSystem();
         CheckInput();
         ApplyWheelPositions();
         ApplyMotor();
-        ApplySteering();    
+        ApplySteering();
+        EngineSound();
     }
-    private void AIFollowPoint()
+
+    void EngineSound()
     {
-        aiFollowMark.transform.position = gameObject.transform.position;
-        //Destroy(aiFollowMark, 2f);
+        //pitchFromCar = playerRB.velocity.magnitude / 50f;
+
+        if(speed < minSpeed)
+        {
+            carEngine.pitch = minPitch;
+        }
+      /*  if(speed > minSpeed && speed < maxSpeed)
+        {
+            carEngine.pitch = maxPitch;
+        }*/
+        if(speed > maxSpeed)
+        {
+            carEngine.pitch = maxPitch;
+        }
+    }
+    void CarHorn()
+    {
+        if(Input.GetKey(KeyCode.E))
+        {
+            HornIsOn = true;
+        }
+        else
+        {
+            HornIsOn = false;
+        }
+        if(HornIsOn == true)
+        {
+            carHorn.Play();
+            Debug.Log("Horn On");
+        }
+        else
+        {
+            carHorn.Stop();
+            Debug.Log("No Horn");
+        }
     }
     void CheckInput()
     {
@@ -76,10 +120,6 @@ public class CarController : MonoBehaviour
     void ApplySteering()
     {
         float steeringAngle = steeringInput * steeringCurve.Evaluate(speed);
-       /* if(slipAngle < 120f)
-        {
-            steeringAngle = 
-        }*/
         steeringAngle = Mathf.Clamp(steeringAngle, -90f, 90f);
         Colliders.FrontRightWheel.steerAngle = steeringAngle;
         Colliders.FrontLeftWheel.steerAngle = steeringAngle;
