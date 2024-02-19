@@ -7,7 +7,11 @@ public class DifficultyChangerMenu : MonoBehaviour
 {
     private PoliceCarAI policeAI;
     private CarHealth carHealth;
-    private DifficultyChangerCar otherScript;
+
+    [Header("---Police Cars---")]
+    public GameObject policeCar1;
+    public GameObject policeCar2;
+    public GameObject policeCar3;
 
     [Header("---Buttons---")]
     public Button easyButton;
@@ -42,21 +46,38 @@ public class DifficultyChangerMenu : MonoBehaviour
     void EasyDifficulty()
     {
         Debug.Log("Easy");
-        EasyBool = true;
+        carHealth.maxHealth = carHealth.maxHealth + 400;
+        carHealth.maxBoost = carHealth.maxBoost + 700;
+        carHealth.healthLose = carHealth.healthLose - 6;
+        carHealth.PoliceHealthLose = carHealth.PoliceHealthLose - 30;
+        policeAI.moveSpeed = policeAI.moveSpeed - 2;
     }
     void NormalDifficulty()
     {
         Debug.Log("Normal");
-        NormalBool = true;
+        carHealth.maxHealth = carHealth.maxHealth * 1;
+        carHealth.maxBoost = carHealth.maxBoost * 1;
+        carHealth.healthLose = carHealth.healthLose * 1;
+        carHealth.PoliceHealthLose = carHealth.PoliceHealthLose * 1;
+        policeAI.moveSpeed = policeAI.moveSpeed * 1;
     }
     void HardDifficulty()
     {
         Debug.Log("Hard");
-        HardBool = true;
+        carHealth.maxHealth = carHealth.maxHealth - 400;
+        carHealth.maxBoost = carHealth.maxBoost - 500;
+        carHealth.healthLose = carHealth.healthLose + 20;
+        carHealth.PoliceHealthLose = carHealth.PoliceHealthLose + 20;
+        policeAI.moveSpeed = policeAI.moveSpeed + 3;
     }
     void SingleLifeDifficulty()
     {
         Debug.Log("Single Life");
-        SingleLifeBool = true;
+        carHealth.maxHealth = carHealth.maxHealth - 790;
+        carHealth.maxBoost = carHealth.maxBoost - 800;
+        carHealth.healthLose = carHealth.healthLose * 1;
+        policeCar1.SetActive(false);
+        policeCar2.SetActive(false);
+        policeCar3.SetActive(false);
     }
 }
