@@ -31,13 +31,12 @@ public class PoliceCarAI : MonoBehaviour
 
     void Update()
     {
-       // if (waypoints.Length == 0 || !agent.isOnNavMesh)
-          //  return;
-
+        SetNextWaypoint();
+        /*
         if (!agent.pathPending && agent.remainingDistance < 0.5f)
         {
             SetNextWaypoint();
-        }
+        }*/
     }
 
     void SetNextWaypoint()

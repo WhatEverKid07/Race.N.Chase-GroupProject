@@ -5,6 +5,8 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     public AudioSource PoliceSiren;
+    public AudioSource PoliceSiren2;
+    public AudioSource PoliceSiren3;
     public GameObject pauseMenu;
     public static bool gameIsPaused = false;
 
@@ -31,6 +33,8 @@ public class PauseMenu : MonoBehaviour
         gameIsPaused = false;
         Cursor.lockState = CursorLockMode.Locked;
         PoliceSiren.UnPause();
+        PoliceSiren2.UnPause();
+        PoliceSiren3.UnPause();
     }
        
     void Pause()
@@ -40,5 +44,7 @@ public class PauseMenu : MonoBehaviour
         gameIsPaused = true;
         Cursor.lockState = CursorLockMode.None;
         PoliceSiren.Pause();
+        PoliceSiren2.Pause();
+        PoliceSiren3.Pause();
     }
 }
