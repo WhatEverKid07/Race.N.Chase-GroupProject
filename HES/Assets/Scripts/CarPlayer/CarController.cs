@@ -28,18 +28,21 @@ public class CarController : MonoBehaviour
 
     private Rigidbody playerRB;
     private float slipAngle;
-    private bool HornIsOn = false;
+    //private bool HornIsOn = false;
 
     public AudioSource carHorn;
-    public AudioSource carEngine;
+    //public AudioSource carEngine;
+    public AudioSource backgroundMusic;
     
     void Start()
     {
-        HornIsOn = false;
+        //HornIsOn = false;
         isBoosting = false;
         playerRB = gameObject.GetComponent<Rigidbody>();
         //carEngine = GetComponent<AudioSource>();
         Cursor.lockState = CursorLockMode.Locked;
+        backgroundMusic.Play();
+        //carEngine.Play();
     }
     void Update()
     {
@@ -51,16 +54,16 @@ public class CarController : MonoBehaviour
         ApplyWheelPositions();
         ApplyMotor();
         ApplySteering();
-        EngineSound();
+        //EngineSound();
     }
-
+    
     void EngineSound()
     {
         //pitchFromCar = playerRB.velocity.magnitude / 50f;
 
         if(speed < minSpeed)
         {
-            carEngine.pitch = minPitch;
+           //carEngine.pitch = minPitch;
         }
       /*  if(speed > minSpeed && speed < maxSpeed)
         {
@@ -68,11 +71,12 @@ public class CarController : MonoBehaviour
         }*/
         if(speed > maxSpeed)
         {
-            carEngine.pitch = maxPitch;
+            //carEngine.pitch = maxPitch;
         }
     }
+    
     void CarHorn()
-    {
+    {/*
         if(Input.GetKey(KeyCode.E))
         {
             HornIsOn = true;
@@ -81,7 +85,8 @@ public class CarController : MonoBehaviour
         {
             HornIsOn = false;
         }
-        if(HornIsOn == true)
+        */
+        if(Input.GetKey(KeyCode.E))
         {
             carHorn.Play();
             Debug.Log("Horn On");

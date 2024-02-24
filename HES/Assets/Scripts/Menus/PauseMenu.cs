@@ -10,6 +10,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
     public static bool gameIsPaused = false;
 
+    private CarController carController;
+
     // Update is called once per frame
     void Update()
     {
@@ -35,6 +37,7 @@ public class PauseMenu : MonoBehaviour
         PoliceSiren.UnPause();
         PoliceSiren2.UnPause();
         PoliceSiren3.UnPause();
+        //carController.carEngine.UnPause();
     }
        
     void Pause()
@@ -46,5 +49,6 @@ public class PauseMenu : MonoBehaviour
         PoliceSiren.Pause();
         PoliceSiren2.Pause();
         PoliceSiren3.Pause();
+        //carController.carEngine.Pause();
     }
 }

@@ -19,19 +19,11 @@ public class DifficultyChangerMenu : MonoBehaviour
     public Button hardButton;
     public Button singleLifeButton;
 
-    [SerializeField]
-    public bool EasyBool = false;
-    public bool NormalBool = false;
-    public bool HardBool = false;
-    public bool SingleLifeBool = false;
+    [Header("---Game---")]
+    public Transform[] GameObjects;
 
     private void Start()
     {
-        EasyBool = false;
-        NormalBool = false;
-        HardBool = false;
-        SingleLifeBool = false;
-
         Button Easy = easyButton.GetComponent<Button>();
         Button Normal = normalButton.GetComponent<Button>();
         Button Hard = hardButton.GetComponent<Button>();

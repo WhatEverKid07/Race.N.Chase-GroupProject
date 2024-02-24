@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Assertions.Must;
+using JetBrains.Annotations;
 
 public class CarHealth : MonoBehaviour
 {
@@ -36,6 +37,8 @@ public class CarHealth : MonoBehaviour
     public int boostLose;
     public AudioSource BoostSFX;
 
+    private bool boostRegen;
+
     void Start()
     {
         Time.timeScale = 1;
@@ -48,7 +51,8 @@ public class CarHealth : MonoBehaviour
 
     void Update()
     {
-        if(controller.isBoosting == true)
+        BoostRegen();
+        if (controller.isBoosting == true)
         {
             LoseBoost(boostLose);
             BoostSFX.Play();
@@ -103,6 +107,14 @@ public class CarHealth : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             smashedCar.SetActive(true);
             gameObject.SetActive(false);
+        }
+    }
+    void BoostRegen()
+    {
+        if(currentBoost < maxBoost && controller.isBoosting == false)
+        {
+            boostBar.boostSlider.value = boostBar.boostSlider.value + 1;
+            currentBoost = currentBoost + 1;
         }
     }
 }
