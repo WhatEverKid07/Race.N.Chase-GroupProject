@@ -6,7 +6,7 @@
     <title>Race N' Chase'</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -16,7 +16,7 @@
         }
 
         body {
-            font-family: "Silkscreen", serif;
+            font-family: "Lato", serif;
             line-height: 1.6;
             background-color: #f9f9f9;
             color: #333;
@@ -29,7 +29,7 @@
         }
 
             header h1 {
-                font-family: "Silkscreen", serif;
+                font-family: "Lato", serif;
                 font-size: 2.5rem;
                 margin-bottom: 10px;
             }
@@ -49,7 +49,7 @@
         }
 
             section h2 {
-                font-family: "Silkscreen", serif;
+                font-family: "Lato", serif;
                 font-size: 2rem;
                 margin-bottom: 10px;
                 color: #444;
@@ -58,12 +58,28 @@
             section p {
                 margin-bottom: 20px;
             }
-
+        /* Footer Styles */
         footer {
             text-align: center;
             margin-top: 40px;
             font-size: 0.9rem;
             color: #777;
+        }
+
+        /* Links */
+        a {
+            color: lightblue;
+            text-decoration: none;
+        }
+
+            a:hover {
+                color: red;
+            }
+
+        /* Custom Classes */
+        .thick-underline {
+            text-decoration: underline;
+            text-decoration-thickness: 3px;
         }
     </style>
 
@@ -71,30 +87,35 @@
 <body>
     <header>
         <h1>Race N' Chase'</h1>
-        <p>A simple customizable website powered by GitHub Pages</p>
+        <p>My 1st group project</p>
     </header>
 
     <main>
         <section>
             <h2>About</h2>
-            <p>This is a basic template to help you get started with your website. You can edit the content, styles, and layout to suit your needs.</p>
+            <p>
+                This project was completed in around 3 months with multiple breaks inbetween. You are a bank robber and must drive away from the police (basic AI) to your safe house. I'm particularly proud of the fact
+                we managed to add (basic and very simple) voice acting for the robber so the you know the context.
+            </p>
         </section>
 
         <section>
-            <h2>Features</h2>
-            <p>- Fully customizable</p>
-            <p>- Powered by GitHub Pages</p>
-            <p>- Uses modern web technologies</p>
+            <h2>Process</h2>
+            <p>
+                <span class="thick-underline">Art/Visuals:</span> I stuck to doing all the porgramming for the game as well as doing the UI and start/end scenes, I had to do this as both my other teammates were 3D artists.
+            </p>
+            <p>
+                <span class="thick-underline">Sound/Music:</span> One of my teammates used BandLab to create the background music. For sound effects, I found most of them online and then editing them with Audacity.
+            </p>
+            <p>
+                <span class="thick-underline">Code:</span> I watched many tutorials online to get the basic mechanics and then used the Unity API for most of the rest, learning new things along the way.
+            </p>
         </section>
 
         <section>
             <h2>Contact</h2>
-            <p>Feel free to reach out with questions or feedback!</p>
+            <p>Feel free to check out my <a href="https://eugeniocl.wixsite.com/eclgamesdesign" target="_blank">portfolio</a> for links to get in touch!</p>
         </section>
     </main>
-
-    <footer>
-        <p>© 2024 My Custom Website. All rights reserved.</p>
-    </footer>
 </body>
 </html>
